@@ -33,6 +33,15 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post = Post.find(params[:id])
+    if @post.destroy
+      redirect_to posts_path, notice:"Tweetを削除しました！"
+    else
+      render :index
+    end
+  end
+
   private
 
   def post_params

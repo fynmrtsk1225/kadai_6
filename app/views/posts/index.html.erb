@@ -1,5 +1,7 @@
 <h1>みんなのつぶやき</h1>
 
+<p><%= notice %></p>
+
 <table>
   <tr>
     <th>Tweets</th>
@@ -12,6 +14,7 @@
 
     <td><%= link_to '詳細', post_path(post.id) %></td>
     <td><%= link_to "編集する", edit_post_path(post.id) %></td>
+    <td><%= link_to '削除する', post_path(post.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %></td>
   </tr>
 <% end %>
 </table>
