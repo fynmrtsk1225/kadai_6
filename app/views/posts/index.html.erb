@@ -3,11 +3,14 @@
 <table>
   <tr>
     <th>Tweets</th>
+    <th>詳細</th>
   </tr>
 
 <% @posts.each do |post| %>
   <tr>
     <td><%= post.content %></td>
+
+    <td><%= link_to '詳細', post_path(post.id) %></td>
   </tr>
 <% end %>
 </table>
